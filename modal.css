@@ -1,0 +1,33 @@
+.card-modal { position: fixed; inset: 0; z-index: 9998; display: grid; place-items: center; padding: 20px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .3s, visibility .3s; }
+.card-modal.active { opacity: 1; visibility: visible; pointer-events: auto; }
+.card-modal-backdrop { position: absolute; inset: 0; background: rgba(14, 15, 17, .75); backdrop-filter: blur(14px); }
+.card-modal-content { position: relative; width: min(760px, 100%); max-height: 88vh; max-height: 88dvh; overflow-y: auto; overscroll-behavior: contain; background: rgba(30, 32, 35, .95); border: 1px solid var(--border); border-radius: 24px; padding: clamp(28px, 5vw, 48px); box-shadow: 0 30px 80px rgba(0, 0, 0, .65); transform: scale(.94) translateY(16px); transition: transform .4s cubic-bezier(.16, 1, .3, 1); }
+.card-modal.active .card-modal-content { transform: none; }
+.modal-close { position: sticky; top: 0; float: right; margin: -14px -14px 0 0; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border); background: rgba(255, 255, 255, .06); color: var(--text); font-size: 26px; line-height: 1; cursor: pointer; z-index: 2; transition: background .25s, color .25s; }
+.modal-close:hover { background: var(--accent-soft); color: var(--accent-text); }
+body.modal-open { overflow: hidden; }
+
+.m-title { font: 800 clamp(1.8rem, 5vw, 2.8rem)/1.1 var(--font-heading); margin-bottom: 18px; color: var(--text); }
+.m-text { color: var(--muted); line-height: 1.75; margin-bottom: 18px; max-width: 62ch; }
+.m-sub { font: 700 1rem var(--font-heading); margin: 22px 0 10px; color: var(--accent-text); }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { padding: 6px 14px; border-radius: 99px; background: var(--accent-soft); border: 1px solid var(--border); font-size: .85rem; }
+.tl { list-style: none; border-left: 2px solid var(--accent-soft); margin-left: 6px; }
+.tl li { position: relative; padding: 0 0 26px 22px; }
+.tl li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--bg); }
+.tl h3 { font: 700 1.05rem var(--font-body); }
+.tl .meta { font-size: .82rem; color: var(--warm); margin: 3px 0 8px; }
+.tl p { color: var(--muted); line-height: 1.65; font-size: .93rem; }
+
+/* Certificate detail */
+.cert-view { text-align: center; }
+.cert-mat { background: var(--accent-soft); border: 1px solid var(--border); border-radius: 16px; padding: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, .35); overflow: auto; max-height: 52vh; }
+.cert-mat img { width: 100%; display: block; border-radius: 8px; cursor: zoom-in; background: #fff; }
+.cert-mat.zoom img { width: 190%; max-width: none; cursor: zoom-out; }
+.cert-meta { margin: 18px 0 6px; color: var(--muted); font-size: .9rem; }
+.cert-id { display: inline-flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: center; font-size: .82rem; color: var(--muted); }
+.cert-id code { font-family: ui-monospace, monospace; color: var(--text); }
+.cert-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 20px; }
+
+@media (max-width: 768px) { .card-modal { padding: 12px; } }
+@media (prefers-reduced-motion: reduce) { .card-modal, .card-modal-content { transition: none; } }
