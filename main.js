@@ -1,4 +1,4 @@
-import Lenis from "https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.mjs";
+import Lenis from "lenis"
 import "./modal.js";
 
 const TOTAL_FRAMES = 240;
