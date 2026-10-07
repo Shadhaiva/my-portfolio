@@ -1,3 +1,4 @@
+import Lenis from "lenis";
 import "./modal.js";
 
 const TOTAL_FRAMES = 240;
